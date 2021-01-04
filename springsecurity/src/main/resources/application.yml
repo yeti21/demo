@@ -1,0 +1,6 @@
+server:
+  port: 8080
+  servlet:
+    #项目根目录
+    context-path: /demo
+

@@ -1,0 +1,37 @@
+2020-11-14 00:38:44.742 [34mINFO [0;39m --- [           main] [36mcom.example.demo.DemoApplication        [0;39m : Starting DemoApplication using Java 1.8.0_241 on USER-20200812SA with PID 4384 (D:\Intellij IDEA Project\demo\demo\target\classes started by Administrator in D:\Intellij IDEA Project\demo)
+2020-11-14 00:38:44.745 [34mINFO [0;39m --- [           main] [36mcom.example.demo.DemoApplication        [0;39m : The following profiles are active: dev
+2020-11-14 00:38:48.601 [34mINFO [0;39m --- [           main] [36m.s.d.r.c.RepositoryConfigurationDelegate[0;39m : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-11-14 00:38:48.605 [34mINFO [0;39m --- [           main] [36m.s.d.r.c.RepositoryConfigurationDelegate[0;39m : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-11-14 00:38:48.758 [34mINFO [0;39m --- [           main] [36m.s.d.r.c.RepositoryConfigurationDelegate[0;39m : Finished Spring Data repository scanning in 22 ms. Found 0 Redis repository interfaces.
+2020-11-14 00:38:51.533 [34mINFO [0;39m --- [           main] [36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m : Tomcat initialized with port(s): 8080 (http)
+2020-11-14 00:38:51.564 [34mINFO [0;39m --- [           main] [36mo.apache.coyote.http11.Http11NioProtocol[0;39m : Initializing ProtocolHandler ["http-nio-8080"]
+2020-11-14 00:38:51.565 [34mINFO [0;39m --- [           main] [36morg.apache.catalina.core.StandardService[0;39m : Starting service [Tomcat]
+2020-11-14 00:38:51.566 [34mINFO [0;39m --- [           main] [36morg.apache.catalina.core.StandardEngine [0;39m : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2020-11-14 00:38:51.568 [34mINFO [0;39m --- [           main] [36mo.a.catalina.core.AprLifecycleListener  [0;39m : An older version [1.2.14] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.23]
+2020-11-14 00:38:51.568 [34mINFO [0;39m --- [           main] [36mo.a.catalina.core.AprLifecycleListener  [0;39m : Loaded Apache Tomcat Native library [1.2.14] using APR version [1.6.2].
+2020-11-14 00:38:51.569 [34mINFO [0;39m --- [           main] [36mo.a.catalina.core.AprLifecycleListener  [0;39m : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-11-14 00:38:51.569 [34mINFO [0;39m --- [           main] [36mo.a.catalina.core.AprLifecycleListener  [0;39m : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-11-14 00:38:52.650 [34mINFO [0;39m --- [           main] [36mo.a.catalina.core.AprLifecycleListener  [0;39m : OpenSSL successfully initialized [OpenSSL 1.0.2l  25 May 2017]
+2020-11-14 00:38:52.938 [34mINFO [0;39m --- [           main] [36mo.a.c.c.C.[Tomcat].[localhost].[/demo]  [0;39m : Initializing Spring embedded WebApplicationContext
+2020-11-14 00:38:52.939 [34mINFO [0;39m --- [           main] [36mw.s.c.ServletWebServerApplicationContext[0;39m : Root WebApplicationContext: initialization completed in 7883 ms
+2020-11-14 00:38:53.632 [34mINFO [0;39m --- [           main] [36mc.a.d.s.b.a.DruidDataSourceAutoConfigure[0;39m : Init DruidDataSource
+2020-11-14 00:38:55.585 [34mINFO [0;39m --- [           main] [36mcom.alibaba.druid.pool.DruidDataSource  [0;39m : {dataSource-1} inited
+2020-11-14 00:38:59.030 [34mINFO [0;39m --- [           main] [36mpertySourcedRequestMappingHandlerMapping[0;39m : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-11-14 00:38:59.320 [34mINFO [0;39m --- [           main] [36mo.s.s.concurrent.ThreadPoolTaskExecutor [0;39m : Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-14 00:39:00.432 [31mWARN [0;39m --- [           main] [36morg.thymeleaf.templatemode.TemplateMode [0;39m : [THYMELEAF][main] Template Mode 'LEGACYHTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-11-14 00:39:01.074 [34mINFO [0;39m --- [           main] [36mo.apache.coyote.http11.Http11NioProtocol[0;39m : Starting ProtocolHandler ["http-nio-8080"]
+2020-11-14 00:39:01.117 [34mINFO [0;39m --- [           main] [36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m : Tomcat started on port(s): 8080 (http) with context path '/demo'
+2020-11-14 00:39:01.119 [34mINFO [0;39m --- [           main] [36md.s.w.p.DocumentationPluginsBootstrapper[0;39m : Context refreshed
+2020-11-14 00:39:01.198 [34mINFO [0;39m --- [           main] [36md.s.w.p.DocumentationPluginsBootstrapper[0;39m : Found 1 custom documentation plugin(s)
+2020-11-14 00:39:01.249 [34mINFO [0;39m --- [           main] [36ms.d.s.w.s.ApiListingReferenceScanner    [0;39m : Scanning for api listing references
+2020-11-14 00:39:01.611 [34mINFO [0;39m --- [           main] [36m.d.s.w.r.o.CachingOperationNameGenerator[0;39m : Generating unique operation named: a1UsingGET_1
+2020-11-14 00:39:01.615 [34mINFO [0;39m --- [           main] [36m.d.s.w.r.o.CachingOperationNameGenerator[0;39m : Generating unique operation named: a2UsingGET_1
+2020-11-14 00:39:01.652 [34mINFO [0;39m --- [           main] [36m.d.s.w.r.o.CachingOperationNameGenerator[0;39m : Generating unique operation named: a3UsingGET_1
+2020-11-14 00:39:01.685 [34mINFO [0;39m --- [           main] [36m.d.s.w.r.o.CachingOperationNameGenerator[0;39m : Generating unique operation named: aUsingGET_1
+2020-11-14 00:39:01.709 [34mINFO [0;39m --- [           main] [36m.d.s.w.r.o.CachingOperationNameGenerator[0;39m : Generating unique operation named: a1UsingGET_2
+2020-11-14 00:39:01.715 [34mINFO [0;39m --- [           main] [36m.d.s.w.r.o.CachingOperationNameGenerator[0;39m : Generating unique operation named: a2UsingGET_2
+2020-11-14 00:39:01.720 [34mINFO [0;39m --- [           main] [36m.d.s.w.r.o.CachingOperationNameGenerator[0;39m : Generating unique operation named: aUsingGET_2
+2020-11-14 00:39:01.721 [34mINFO [0;39m --- [           main] [36m.d.s.w.r.o.CachingOperationNameGenerator[0;39m : Generating unique operation named: bUsingGET_1
+2020-11-14 00:39:01.723 [34mINFO [0;39m --- [           main] [36m.d.s.w.r.o.CachingOperationNameGenerator[0;39m : Generating unique operation named: cUsingGET_1
+2020-11-14 00:39:01.730 [34mINFO [0;39m --- [           main] [36m.d.s.w.r.o.CachingOperationNameGenerator[0;39m : Generating unique operation named: dUsingGET_1
+2020-11-14 00:39:01.833 [34mINFO [0;39m --- [           main] [36mcom.example.demo.DemoApplication        [0;39m : Started DemoApplication in 19.639 seconds (JVM running for 23.998)

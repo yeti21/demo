@@ -1,0 +1,214 @@
+2020-11-13 23:38:20.994 [34mINFO [0;39m --- [           main] [36mcom.example.demo.DemoApplication        [0;39m : Starting DemoApplication using Java 1.8.0_241 on USER-20200812SA with PID 5692 (D:\ideaprojects\demo1\demo\target\classes started by Administrator in D:\ideaprojects\demo1)
+2020-11-13 23:38:21.010 [34mINFO [0;39m --- [           main] [36mcom.example.demo.DemoApplication        [0;39m : The following profiles are active: dev
+2020-11-13 23:38:25.983 [34mINFO [0;39m --- [           main] [36m.s.d.r.c.RepositoryConfigurationDelegate[0;39m : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-11-13 23:38:25.989 [34mINFO [0;39m --- [           main] [36m.s.d.r.c.RepositoryConfigurationDelegate[0;39m : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-11-13 23:38:26.118 [34mINFO [0;39m --- [           main] [36m.s.d.r.c.RepositoryConfigurationDelegate[0;39m : Finished Spring Data repository scanning in 35 ms. Found 0 Redis repository interfaces.
+2020-11-13 23:38:28.370 [31mWARN [0;39m --- [           main] [36mConfigServletWebServerApplicationContext[0;39m : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'objectMapperConfigurer' defined in class path resource [springfox/documentation/spring/web/SpringfoxWebMvcConfiguration.class]: BeanPostProcessor before instantiation of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration': BeanPostProcessor before instantiation of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.cache.annotation.ProxyCachingConfiguration': Initialization of bean failed; nested exception is java.lang.IllegalArgumentException: warning no match for this type name: com.example.controller.ThymeleafController [Xlint:invalidAbsoluteTypeName]
+2020-11-13 23:38:28.394 [34mINFO [0;39m --- [           main] [36mConditionEvaluationReportLoggingListener[0;39m : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-11-13 23:38:28.556 [1;31mERROR[0;39m --- [           main] [36mo.springframework.boot.SpringApplication[0;39m : Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'objectMapperConfigurer' defined in class path resource [springfox/documentation/spring/web/SpringfoxWebMvcConfiguration.class]: BeanPostProcessor before instantiation of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration': BeanPostProcessor before instantiation of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.cache.annotation.ProxyCachingConfiguration': Initialization of bean failed; nested exception is java.lang.IllegalArgumentException: warning no match for this type name: com.example.controller.ThymeleafController [Xlint:invalidAbsoluteTypeName]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:526)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.registerBeanPostProcessors(PostProcessorRegistrationDelegate.java:244)
+	at org.springframework.context.support.AbstractApplicationContext.registerBeanPostProcessors(AbstractApplicationContext.java:767)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:572)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:144)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:767)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:759)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:426)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:326)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1309)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1298)
+	at com.example.demo.DemoApplication.main(DemoApplication.java:21)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration': BeanPostProcessor before instantiation of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.cache.annotation.ProxyCachingConfiguration': Initialization of bean failed; nested exception is java.lang.IllegalArgumentException: warning no match for this type name: com.example.controller.ThymeleafController [Xlint:invalidAbsoluteTypeName]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:526)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:409)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1336)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1179)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:571)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:531)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
+	at org.springframework.aop.framework.autoproxy.BeanFactoryAdvisorRetrievalHelper.findAdvisorBeans(BeanFactoryAdvisorRetrievalHelper.java:91)
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findCandidateAdvisors(AbstractAdvisorAutoProxyCreator.java:111)
+	at org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator.findCandidateAdvisors(AnnotationAwareAspectJAutoProxyCreator.java:92)
+	at org.springframework.aop.aspectj.autoproxy.AspectJAwareAdvisorAutoProxyCreator.shouldSkip(AspectJAwareAdvisorAutoProxyCreator.java:101)
+	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.postProcessBeforeInstantiation(AbstractAutoProxyCreator.java:251)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInstantiation(AbstractAutowireCapableBeanFactory.java:1144)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.resolveBeforeInstantiation(AbstractAutowireCapableBeanFactory.java:1119)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520)
+	... 15 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.cache.annotation.ProxyCachingConfiguration': Initialization of bean failed; nested exception is java.lang.IllegalArgumentException: warning no match for this type name: com.example.controller.ThymeleafController [Xlint:invalidAbsoluteTypeName]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:617)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:531)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:409)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1336)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1179)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:571)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:531)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
+	at org.springframework.aop.framework.autoproxy.BeanFactoryAdvisorRetrievalHelper.findAdvisorBeans(BeanFactoryAdvisorRetrievalHelper.java:91)
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findCandidateAdvisors(AbstractAdvisorAutoProxyCreator.java:111)
+	at org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator.findCandidateAdvisors(AnnotationAwareAspectJAutoProxyCreator.java:92)
+	at org.springframework.aop.aspectj.autoproxy.AspectJAwareAdvisorAutoProxyCreator.shouldSkip(AspectJAwareAdvisorAutoProxyCreator.java:101)
+	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.postProcessBeforeInstantiation(AbstractAutoProxyCreator.java:251)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInstantiation(AbstractAutowireCapableBeanFactory.java:1144)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.resolveBeforeInstantiation(AbstractAutowireCapableBeanFactory.java:1119)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520)
+	... 36 common frames omitted
+Caused by: java.lang.IllegalArgumentException: warning no match for this type name: com.example.controller.ThymeleafController [Xlint:invalidAbsoluteTypeName]
+	at org.aspectj.weaver.tools.PointcutParser.parsePointcutExpression(PointcutParser.java:319)
+	at org.springframework.aop.aspectj.AspectJExpressionPointcut.buildPointcutExpression(AspectJExpressionPointcut.java:227)
+	at org.springframework.aop.aspectj.AspectJExpressionPointcut.obtainPointcutExpression(AspectJExpressionPointcut.java:198)
+	at org.springframework.aop.aspectj.AspectJExpressionPointcut.getClassFilter(AspectJExpressionPointcut.java:177)
+	at org.springframework.aop.support.AopUtils.canApply(AopUtils.java:226)
+	at org.springframework.aop.support.AopUtils.canApply(AopUtils.java:289)
+	at org.springframework.aop.support.AopUtils.findAdvisorsThatCanApply(AopUtils.java:321)
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findAdvisorsThatCanApply(AbstractAdvisorAutoProxyCreator.java:128)
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findEligibleAdvisors(AbstractAdvisorAutoProxyCreator.java:97)
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.getAdvicesAndAdvisorsForBean(AbstractAdvisorAutoProxyCreator.java:78)
+	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.wrapIfNecessary(AbstractAutoProxyCreator.java:337)
+	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.postProcessAfterInitialization(AbstractAutoProxyCreator.java:289)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsAfterInitialization(AbstractAutowireCapableBeanFactory.java:444)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1792)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:609)
+	... 58 common frames omitted
+2020-11-13 23:42:07.055 [34mINFO [0;39m --- [           main] [36mcom.example.demo.DemoApplication        [0;39m : Starting DemoApplication using Java 1.8.0_241 on USER-20200812SA with PID 3736 (D:\ideaprojects\demo1\demo\target\classes started by Administrator in D:\ideaprojects\demo1)
+2020-11-13 23:42:07.060 [34mINFO [0;39m --- [           main] [36mcom.example.demo.DemoApplication        [0;39m : The following profiles are active: dev
+2020-11-13 23:42:09.121 [34mINFO [0;39m --- [           main] [36m.s.d.r.c.RepositoryConfigurationDelegate[0;39m : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-11-13 23:42:09.128 [34mINFO [0;39m --- [           main] [36m.s.d.r.c.RepositoryConfigurationDelegate[0;39m : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-11-13 23:42:09.186 [34mINFO [0;39m --- [           main] [36m.s.d.r.c.RepositoryConfigurationDelegate[0;39m : Finished Spring Data repository scanning in 26 ms. Found 0 Redis repository interfaces.
+2020-11-13 23:42:12.123 [34mINFO [0;39m --- [           main] [36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m : Tomcat initialized with port(s): 8080 (http)
+2020-11-13 23:42:12.161 [34mINFO [0;39m --- [           main] [36mo.apache.coyote.http11.Http11NioProtocol[0;39m : Initializing ProtocolHandler ["http-nio-8080"]
+2020-11-13 23:42:12.162 [34mINFO [0;39m --- [           main] [36morg.apache.catalina.core.StandardService[0;39m : Starting service [Tomcat]
+2020-11-13 23:42:12.163 [34mINFO [0;39m --- [           main] [36morg.apache.catalina.core.StandardEngine [0;39m : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2020-11-13 23:42:12.165 [34mINFO [0;39m --- [           main] [36mo.a.catalina.core.AprLifecycleListener  [0;39m : An older version [1.2.14] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.23]
+2020-11-13 23:42:12.165 [34mINFO [0;39m --- [           main] [36mo.a.catalina.core.AprLifecycleListener  [0;39m : Loaded Apache Tomcat Native library [1.2.14] using APR version [1.6.2].
+2020-11-13 23:42:12.165 [34mINFO [0;39m --- [           main] [36mo.a.catalina.core.AprLifecycleListener  [0;39m : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-11-13 23:42:12.166 [34mINFO [0;39m --- [           main] [36mo.a.catalina.core.AprLifecycleListener  [0;39m : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-11-13 23:42:13.235 [34mINFO [0;39m --- [           main] [36mo.a.catalina.core.AprLifecycleListener  [0;39m : OpenSSL successfully initialized [OpenSSL 1.0.2l  25 May 2017]
+2020-11-13 23:42:13.533 [34mINFO [0;39m --- [           main] [36mo.a.c.c.C.[Tomcat].[localhost].[/demo]  [0;39m : Initializing Spring embedded WebApplicationContext
+2020-11-13 23:42:13.534 [34mINFO [0;39m --- [           main] [36mw.s.c.ServletWebServerApplicationContext[0;39m : Root WebApplicationContext: initialization completed in 6359 ms
+2020-11-13 23:42:14.553 [34mINFO [0;39m --- [           main] [36mc.a.d.s.b.a.DruidDataSourceAutoConfigure[0;39m : Init DruidDataSource
+2020-11-13 23:42:16.858 [34mINFO [0;39m --- [           main] [36mcom.alibaba.druid.pool.DruidDataSource  [0;39m : {dataSource-1} inited
+2020-11-13 23:42:21.235 [34mINFO [0;39m --- [           main] [36mpertySourcedRequestMappingHandlerMapping[0;39m : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-11-13 23:42:21.556 [34mINFO [0;39m --- [           main] [36mo.s.s.concurrent.ThreadPoolTaskExecutor [0;39m : Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-13 23:42:23.456 [31mWARN [0;39m --- [           main] [36morg.thymeleaf.templatemode.TemplateMode [0;39m : [THYMELEAF][main] Template Mode 'LEGACYHTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-11-13 23:42:24.186 [34mINFO [0;39m --- [           main] [36mo.apache.coyote.http11.Http11NioProtocol[0;39m : Starting ProtocolHandler ["http-nio-8080"]
+2020-11-13 23:42:24.244 [34mINFO [0;39m --- [           main] [36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m : Tomcat started on port(s): 8080 (http) with context path '/demo'
+2020-11-13 23:42:24.245 [34mINFO [0;39m --- [           main] [36md.s.w.p.DocumentationPluginsBootstrapper[0;39m : Context refreshed
+2020-11-13 23:42:24.364 [34mINFO [0;39m --- [           main] [36md.s.w.p.DocumentationPluginsBootstrapper[0;39m : Found 1 custom documentation plugin(s)
+2020-11-13 23:42:24.457 [34mINFO [0;39m --- [           main] [36ms.d.s.w.s.ApiListingReferenceScanner    [0;39m : Scanning for api listing references
+2020-11-13 23:42:24.950 [34mINFO [0;39m --- [           main] [36m.d.s.w.r.o.CachingOperationNameGenerator[0;39m : Generating unique operation named: a1UsingGET_1
+2020-11-13 23:42:24.954 [34mINFO [0;39m --- [           main] [36m.d.s.w.r.o.CachingOperationNameGenerator[0;39m : Generating unique operation named: a2UsingGET_1
+2020-11-13 23:42:25.011 [34mINFO [0;39m --- [           main] [36m.d.s.w.r.o.CachingOperationNameGenerator[0;39m : Generating unique operation named: a3UsingGET_1
+2020-11-13 23:42:25.048 [34mINFO [0;39m --- [           main] [36m.d.s.w.r.o.CachingOperationNameGenerator[0;39m : Generating unique operation named: aUsingGET_1
+2020-11-13 23:42:25.076 [34mINFO [0;39m --- [           main] [36m.d.s.w.r.o.CachingOperationNameGenerator[0;39m : Generating unique operation named: a1UsingGET_2
+2020-11-13 23:42:25.084 [34mINFO [0;39m --- [           main] [36m.d.s.w.r.o.CachingOperationNameGenerator[0;39m : Generating unique operation named: a2UsingGET_2
+2020-11-13 23:42:25.090 [34mINFO [0;39m --- [           main] [36m.d.s.w.r.o.CachingOperationNameGenerator[0;39m : Generating unique operation named: aUsingGET_2
+2020-11-13 23:42:25.093 [34mINFO [0;39m --- [           main] [36m.d.s.w.r.o.CachingOperationNameGenerator[0;39m : Generating unique operation named: bUsingGET_1
+2020-11-13 23:42:25.095 [34mINFO [0;39m --- [           main] [36m.d.s.w.r.o.CachingOperationNameGenerator[0;39m : Generating unique operation named: cUsingGET_1
+2020-11-13 23:42:25.102 [34mINFO [0;39m --- [           main] [36m.d.s.w.r.o.CachingOperationNameGenerator[0;39m : Generating unique operation named: dUsingGET_1
+2020-11-13 23:42:25.221 [34mINFO [0;39m --- [           main] [36mcom.example.demo.DemoApplication        [0;39m : Started DemoApplication in 20.047 seconds (JVM running for 21.157)
+2020-11-13 23:48:10.697 [34mINFO [0;39m --- [           main] [36mcom.example.demo.DemoApplication        [0;39m : Starting DemoApplication using Java 1.8.0_241 on USER-20200812SA with PID 4168 (D:\ideaprojects\demo1\demo\target\classes started by Administrator in D:\ideaprojects\demo1)
+2020-11-13 23:48:10.702 [34mINFO [0;39m --- [           main] [36mcom.example.demo.DemoApplication        [0;39m : The following profiles are active: dev
+2020-11-13 23:48:12.142 [34mINFO [0;39m --- [           main] [36m.s.d.r.c.RepositoryConfigurationDelegate[0;39m : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-11-13 23:48:12.145 [34mINFO [0;39m --- [           main] [36m.s.d.r.c.RepositoryConfigurationDelegate[0;39m : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-11-13 23:48:12.182 [34mINFO [0;39m --- [           main] [36m.s.d.r.c.RepositoryConfigurationDelegate[0;39m : Finished Spring Data repository scanning in 14 ms. Found 0 Redis repository interfaces.
+2020-11-13 23:48:12.984 [34mINFO [0;39m --- [           main] [36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m : Tomcat initialized with port(s): 8080 (http)
+2020-11-13 23:48:12.994 [34mINFO [0;39m --- [           main] [36mo.apache.coyote.http11.Http11NioProtocol[0;39m : Initializing ProtocolHandler ["http-nio-8080"]
+2020-11-13 23:48:12.995 [34mINFO [0;39m --- [           main] [36morg.apache.catalina.core.StandardService[0;39m : Starting service [Tomcat]
+2020-11-13 23:48:12.995 [34mINFO [0;39m --- [           main] [36morg.apache.catalina.core.StandardEngine [0;39m : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2020-11-13 23:48:12.997 [34mINFO [0;39m --- [           main] [36mo.a.catalina.core.AprLifecycleListener  [0;39m : An older version [1.2.14] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.23]
+2020-11-13 23:48:12.998 [34mINFO [0;39m --- [           main] [36mo.a.catalina.core.AprLifecycleListener  [0;39m : Loaded Apache Tomcat Native library [1.2.14] using APR version [1.6.2].
+2020-11-13 23:48:12.998 [34mINFO [0;39m --- [           main] [36mo.a.catalina.core.AprLifecycleListener  [0;39m : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-11-13 23:48:12.998 [34mINFO [0;39m --- [           main] [36mo.a.catalina.core.AprLifecycleListener  [0;39m : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-11-13 23:48:14.028 [34mINFO [0;39m --- [           main] [36mo.a.catalina.core.AprLifecycleListener  [0;39m : OpenSSL successfully initialized [OpenSSL 1.0.2l  25 May 2017]
+2020-11-13 23:48:14.123 [34mINFO [0;39m --- [           main] [36mo.a.c.c.C.[Tomcat].[localhost].[/demo]  [0;39m : Initializing Spring embedded WebApplicationContext
+2020-11-13 23:48:14.124 [34mINFO [0;39m --- [           main] [36mw.s.c.ServletWebServerApplicationContext[0;39m : Root WebApplicationContext: initialization completed in 3307 ms
+2020-11-13 23:48:14.334 [34mINFO [0;39m --- [           main] [36mc.a.d.s.b.a.DruidDataSourceAutoConfigure[0;39m : Init DruidDataSource
+2020-11-13 23:48:15.258 [34mINFO [0;39m --- [           main] [36mcom.alibaba.druid.pool.DruidDataSource  [0;39m : {dataSource-1} inited
+2020-11-13 23:48:16.517 [34mINFO [0;39m --- [           main] [36mpertySourcedRequestMappingHandlerMapping[0;39m : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-11-13 23:48:16.650 [34mINFO [0;39m --- [           main] [36mo.s.s.concurrent.ThreadPoolTaskExecutor [0;39m : Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-13 23:48:17.329 [31mWARN [0;39m --- [           main] [36morg.thymeleaf.templatemode.TemplateMode [0;39m : [THYMELEAF][main] Template Mode 'LEGACYHTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-11-13 23:48:17.630 [34mINFO [0;39m --- [           main] [36mo.apache.coyote.http11.Http11NioProtocol[0;39m : Starting ProtocolHandler ["http-nio-8080"]
+2020-11-13 23:48:17.643 [31mWARN [0;39m --- [           main] [36mConfigServletWebServerApplicationContext[0;39m : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8080 is already in use
+2020-11-13 23:48:17.645 [34mINFO [0;39m --- [           main] [36mo.s.s.concurrent.ThreadPoolTaskExecutor [0;39m : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-13 23:48:17.748 [34mINFO [0;39m --- [           main] [36mcom.alibaba.druid.pool.DruidDataSource  [0;39m : {dataSource-1} closing ...
+2020-11-13 23:48:17.760 [34mINFO [0;39m --- [           main] [36mcom.alibaba.druid.pool.DruidDataSource  [0;39m : {dataSource-1} closed
+2020-11-13 23:48:17.764 [34mINFO [0;39m --- [           main] [36mo.apache.coyote.http11.Http11NioProtocol[0;39m : Pausing ProtocolHandler ["http-nio-8080"]
+2020-11-13 23:48:17.767 [34mINFO [0;39m --- [           main] [36morg.apache.catalina.core.StandardService[0;39m : Stopping service [Tomcat]
+2020-11-13 23:48:17.772 [34mINFO [0;39m --- [           main] [36mo.apache.coyote.http11.Http11NioProtocol[0;39m : Stopping ProtocolHandler ["http-nio-8080"]
+2020-11-13 23:48:17.773 [34mINFO [0;39m --- [           main] [36mo.apache.coyote.http11.Http11NioProtocol[0;39m : Destroying ProtocolHandler ["http-nio-8080"]
+2020-11-13 23:48:17.783 [34mINFO [0;39m --- [           main] [36mConditionEvaluationReportLoggingListener[0;39m : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-11-13 23:48:17.799 [1;31mERROR[0;39m --- [           main] [36mo.s.b.d.LoggingFailureAnalysisReporter  [0;39m : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2020-11-13 23:54:43.005 [34mINFO [0;39m --- [           main] [36mcom.example.demo.DemoApplication        [0;39m : Starting DemoApplication using Java 1.8.0_241 on USER-20200812SA with PID 3844 (D:\ideaprojects\demo1\demo\target\classes started by Administrator in D:\ideaprojects\demo1)
+2020-11-13 23:54:43.009 [34mINFO [0;39m --- [           main] [36mcom.example.demo.DemoApplication        [0;39m : The following profiles are active: dev
+2020-11-13 23:54:44.242 [34mINFO [0;39m --- [           main] [36m.s.d.r.c.RepositoryConfigurationDelegate[0;39m : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-11-13 23:54:44.246 [34mINFO [0;39m --- [           main] [36m.s.d.r.c.RepositoryConfigurationDelegate[0;39m : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-11-13 23:54:44.285 [34mINFO [0;39m --- [           main] [36m.s.d.r.c.RepositoryConfigurationDelegate[0;39m : Finished Spring Data repository scanning in 17 ms. Found 0 Redis repository interfaces.
+2020-11-13 23:54:45.110 [34mINFO [0;39m --- [           main] [36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m : Tomcat initialized with port(s): 8080 (http)
+2020-11-13 23:54:45.120 [34mINFO [0;39m --- [           main] [36mo.apache.coyote.http11.Http11NioProtocol[0;39m : Initializing ProtocolHandler ["http-nio-8080"]
+2020-11-13 23:54:45.121 [34mINFO [0;39m --- [           main] [36morg.apache.catalina.core.StandardService[0;39m : Starting service [Tomcat]
+2020-11-13 23:54:45.122 [34mINFO [0;39m --- [           main] [36morg.apache.catalina.core.StandardEngine [0;39m : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2020-11-13 23:54:45.124 [34mINFO [0;39m --- [           main] [36mo.a.catalina.core.AprLifecycleListener  [0;39m : An older version [1.2.14] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.23]
+2020-11-13 23:54:45.124 [34mINFO [0;39m --- [           main] [36mo.a.catalina.core.AprLifecycleListener  [0;39m : Loaded Apache Tomcat Native library [1.2.14] using APR version [1.6.2].
+2020-11-13 23:54:45.124 [34mINFO [0;39m --- [           main] [36mo.a.catalina.core.AprLifecycleListener  [0;39m : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-11-13 23:54:45.125 [34mINFO [0;39m --- [           main] [36mo.a.catalina.core.AprLifecycleListener  [0;39m : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-11-13 23:54:46.159 [34mINFO [0;39m --- [           main] [36mo.a.catalina.core.AprLifecycleListener  [0;39m : OpenSSL successfully initialized [OpenSSL 1.0.2l  25 May 2017]
+2020-11-13 23:54:46.295 [34mINFO [0;39m --- [           main] [36mo.a.c.c.C.[Tomcat].[localhost].[/demo]  [0;39m : Initializing Spring embedded WebApplicationContext
+2020-11-13 23:54:46.296 [34mINFO [0;39m --- [           main] [36mw.s.c.ServletWebServerApplicationContext[0;39m : Root WebApplicationContext: initialization completed in 3229 ms
+2020-11-13 23:54:46.626 [34mINFO [0;39m --- [           main] [36mc.a.d.s.b.a.DruidDataSourceAutoConfigure[0;39m : Init DruidDataSource
+2020-11-13 23:54:47.969 [34mINFO [0;39m --- [           main] [36mcom.alibaba.druid.pool.DruidDataSource  [0;39m : {dataSource-1} inited
+2020-11-13 23:54:49.617 [34mINFO [0;39m --- [           main] [36mpertySourcedRequestMappingHandlerMapping[0;39m : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-11-13 23:54:49.771 [34mINFO [0;39m --- [           main] [36mo.s.s.concurrent.ThreadPoolTaskExecutor [0;39m : Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-13 23:54:50.462 [31mWARN [0;39m --- [           main] [36morg.thymeleaf.templatemode.TemplateMode [0;39m : [THYMELEAF][main] Template Mode 'LEGACYHTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-11-13 23:54:50.822 [34mINFO [0;39m --- [           main] [36mo.apache.coyote.http11.Http11NioProtocol[0;39m : Starting ProtocolHandler ["http-nio-8080"]
+2020-11-13 23:54:50.851 [34mINFO [0;39m --- [           main] [36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m : Tomcat started on port(s): 8080 (http) with context path '/demo'
+2020-11-13 23:54:50.854 [34mINFO [0;39m --- [           main] [36md.s.w.p.DocumentationPluginsBootstrapper[0;39m : Context refreshed
+2020-11-13 23:54:50.879 [34mINFO [0;39m --- [           main] [36md.s.w.p.DocumentationPluginsBootstrapper[0;39m : Found 1 custom documentation plugin(s)
+2020-11-13 23:54:50.923 [34mINFO [0;39m --- [           main] [36ms.d.s.w.s.ApiListingReferenceScanner    [0;39m : Scanning for api listing references
+2020-11-13 23:54:51.132 [34mINFO [0;39m --- [           main] [36m.d.s.w.r.o.CachingOperationNameGenerator[0;39m : Generating unique operation named: a1UsingGET_1
+2020-11-13 23:54:51.135 [34mINFO [0;39m --- [           main] [36m.d.s.w.r.o.CachingOperationNameGenerator[0;39m : Generating unique operation named: a2UsingGET_1
+2020-11-13 23:54:51.158 [34mINFO [0;39m --- [           main] [36m.d.s.w.r.o.CachingOperationNameGenerator[0;39m : Generating unique operation named: a3UsingGET_1
+2020-11-13 23:54:51.187 [34mINFO [0;39m --- [           main] [36m.d.s.w.r.o.CachingOperationNameGenerator[0;39m : Generating unique operation named: aUsingGET_1
+2020-11-13 23:54:51.223 [34mINFO [0;39m --- [           main] [36m.d.s.w.r.o.CachingOperationNameGenerator[0;39m : Generating unique operation named: a1UsingGET_2
+2020-11-13 23:54:51.230 [34mINFO [0;39m --- [           main] [36m.d.s.w.r.o.CachingOperationNameGenerator[0;39m : Generating unique operation named: a2UsingGET_2
+2020-11-13 23:54:51.235 [34mINFO [0;39m --- [           main] [36m.d.s.w.r.o.CachingOperationNameGenerator[0;39m : Generating unique operation named: aUsingGET_2
+2020-11-13 23:54:51.237 [34mINFO [0;39m --- [           main] [36m.d.s.w.r.o.CachingOperationNameGenerator[0;39m : Generating unique operation named: bUsingGET_1
+2020-11-13 23:54:51.240 [34mINFO [0;39m --- [           main] [36m.d.s.w.r.o.CachingOperationNameGenerator[0;39m : Generating unique operation named: cUsingGET_1
+2020-11-13 23:54:51.246 [34mINFO [0;39m --- [           main] [36m.d.s.w.r.o.CachingOperationNameGenerator[0;39m : Generating unique operation named: dUsingGET_1
+2020-11-13 23:54:51.324 [34mINFO [0;39m --- [           main] [36mcom.example.demo.DemoApplication        [0;39m : Started DemoApplication in 10.291 seconds (JVM running for 11.781)

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!--xml文件注释的具体内容-->
+
+<!--
+scan="true":配置文件发生变化,重新加载，默认是true
+scanPeriod="60:设置配置文件修改的时间间隔，单位毫秒，scan="true"生效
+debug属性为true,打印出logback内部日志信息，查看logback运行状态，默认是false
+-->
+<configuration scan="true"  scanPeriod="60 seconds"  debug="false">
+
+<!--appender元素没有或者多个-->
+   <appender name="consoleAppender" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+         <!--pattern属性负责控制输出日志的格式
+         %d{yyyy-MM-dd HH:mm:ss.SSS}：日期
+         %highlight():颜色，debug为黑色,info为蓝色，warn为浅红，error为加粗红
+          %-5level：日志级别,
+         %thread：打印日志的线程
+          %15.15():如果记录的线程字符长度小于15(第一个)则用空格在左侧补齐,如果字符长度大于15(第二个),则从开头开始截断多余的字符
+          %cyan：颜色
+           %msg：日志输出内容
+          %n：换行符
+    %-40.40()：如果记录的logger字符长度小于40(第一个)则用空格在右侧补齐,如果字符长度大于40(第二个),则从开头开始截断多余的字符-->
+        <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %highlight(%-5level) --- [%15.15(%thread)] %cyan(%-40.40(%logger{40})) : %msg%n</pattern>
+        <!--设置字符集-->
+        <charset>UTF-8</charset>
+    </encoder>
+   </appender>
+
+   <!--配置输出日志到文件-->
+    <property  name="log_home" value="./logs" />
+   <appender name="file"  class="ch.qos.logback.core.rolling.RollingFileAppender">
+     <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+           <!--日志文件的文件名-->
+       <FileNamePattern>${log_home}/test.%d{yyyy-MM-dd}.log</FileNamePattern>
+         <!--日志文件最大保留天数-->
+       <MaxHistory>30</MaxHistory>
+     </rollingPolicy>
+     <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+         <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %highlight(%-5level) --- [%15.15(%thread)] %cyan(%-40.40(%logger{40})) : %msg%n</pattern>
+         <charset>UTF-8</charset>
+     </encoder>
+   </appender>
+
+
+    <!--
+    logger元素没有或者多个
+    继承root配置，重写日志等级
+    name是包名
+    -->
+    <logger name="com.example.controller"  level="info"></logger>
+    <logger name="com.example.service.impl"  level="trace"></logger>
+
+
+  <!--
+  root元素至多有一个
+  root 一定要放在最后，因有加载顺序的问题
+  springboot日志默认等级info
+  root定义了全局日志等级
+  配置日志输出位置
+  -->
+      <root level="info">
+        <appender-ref ref="consoleAppender" />
+          <appender-ref ref="file"/>
+      </root>
+
+</configuration>

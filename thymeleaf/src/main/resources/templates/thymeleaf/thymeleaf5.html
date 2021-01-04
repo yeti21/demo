@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--逻辑判断
+如果表达式的值为true，则标签会渲染到页面，否则不进行渲染。
+以下情况被认定为true：
+表达式值为true
+表达式值为非0数值
+表达式值为非0字符
+表达式值为字符串，但不是"false","no","off"
+表达式不是布尔、字符串、数字、字符中的任何一种
+其它情况包括null都被认定为false
+-->
+<p th:text="${user.age}>10"></p>
+
+
+</body>
+</html>

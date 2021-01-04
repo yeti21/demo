@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button type="button" onclick="sendRequest">发起同步请求</button>
+<br>
+<button type="button" onclick="sendAsynRequest">发起异步请求</button>
+<br>
+  <script>
+      /*
+      　AJAX = Asynchronous JavaScript and XML（异步的 JavaScript 和 XML）
+      AJAX 是与服务器交换数据并更新部分网页的艺术，在不重新加载整个页面的情况下实现异步刷新。
+      AJAX应用场景
+      1.检查用户名是否已被注册
+      2. 省市级联下拉框联动
+      3.内容自动补全
+      4.淘宝的搜索补全功能
+       */
+      function sendRequest(){
+          //刷地址栏请求服务器端
+          location.href="ajax?name=admin&password==123";
+      }
+      function sendAsynRequest(){
+          /*
+          创建ajax引擎对象
+          * */
+         xhr=new XMLHttpRequest();
+         /*
+         * 设置回调函数，监听状态变化,目的是处理服务器完全返回的数据
+         *ajax引擎对象与服务器通信状态码xmlHttp.readystate，范围0~4
+         * 0: 请求未初始化
+         *1: 服务器连接已建立
+          2: 请求已接收
+          3: 请求处理中
+          4: 请求已完成，且响应已就绪
+          *这个回调函数一共被调用4次，但只有状态码4的时候才代表服务器响应数据完成
+         * */
+         xhr.onreadystatechange=function () {
+             if(xhr.readyState==4&&xhr.status==200){
+                content=xhr.responseText;
+                alert(content);
+             }
+         }
+      /*
+       * 3. 使用open方法设置请求方式和请求地址
+       * true 异步
+       * false 同步
+       * */
+      xhr.open("post","ajax?name=admin&password==123");
+      /*
+      * 4.设置并发出请求
+      * */
+        xhr.send();
+      }
+
+
+
+  </script>
+
+
+</body>
+</html>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.dao.BMapper">
+
+
+<!--
+select * from orm_user where name=${name}解析的sql为
+select * from orm_user where name=name,${}只是占位符，自己加''  ""
+
+select * from orm_user where name=#{name}解析的sql为
+select * from orm_user where name="name",自动加入" "
+-->
+<select id="test1" resultType="B">
+select * from orm_user where name="${name}";
+</select>
+
+<!--恶意注入
+select * from orm_user where name="${name}" or "1=1"解析的sql为
+select * from orm_user; 无需参数验证
+ -->
+<select id="test2" resultType="B">
+    select * from orm_user where name="${name}" or "1=1";
+</select>
+
+
+
+<!--mybatis增删改查外其他元素-->
+<sql id="a">
+  <if test="id!=null and id!=' '">
+    and  id=#{id}
+  </if>
+</sql>
+    <!--使用include引用sql片段-->
+<select id="test3" resultType="B">
+    select * from orm_user
+    <where>
+        <include refid="a"></include>
+    </where>
+</select>
+<!--引入其他mapper.xml sql <include refid="namespace.sql片段"></include> -->
+
+
+<!--
+当实体类中的属性和数据库中的字段对应是，我们使用resultType和parameterType就可以完成CRUD；
+当实体类中的属性和数据库中的字段不对应时，就要用resultMap和parameterMap了。
+-->
+
+<!--动态sql
+if
+choose(when otherwise)
+trim(where set)
+foreach
+
+name=null和name=" "查出来是空
+-->
+<select id="test4" resultType="B">
+    select * from orm_user where   name=#{name}
+</select>
+
+<!-- name=null 只会查status='1'的所有记录 -->
+<select id="test5" resultType="B">
+     select * from orm_user
+     where status='1'
+     <if test="name!=null">
+      and  name=#{name}
+     </if>
+</select>
+
+    <!--传入了id ,按照id查找
+    传入了name，按照name查找-->
+<select id="test6" resultType="B">
+    select * from orm_user
+    where status='1'
+    <choose>
+        <when test="id!=null">
+            and id=#{id}
+        </when>
+        <when test="name!=null">
+            and name=#{name}
+        </when>
+        <otherwise>
+            and email='1186939107@qq.com'
+        </otherwise>
+    </choose>
+</select>
+
+<!--status=null 查询失败-->
+<select id="test7" resultType="B">
+    select  * from orm_user
+    where
+    <if test="status!=null">
+      status=#{status}
+    </if>
+    <if test="name!=null">
+       and name=#{name}
+    </if>
+</select>
+
+<select id="test8" resultType="B">
+    select * from orm_user
+    <where>
+      <if test="status!=null">
+          status=#{status}
+      </if>
+        <if test="name!=null">
+            and name=#{name}
+        </if>
+    </where>
+</select>
+
+<update id="test9">
+    update orm_user
+    <set>
+        <if test="name!=null"> name=#{name},</if>
+        <if test="status!=null"> status=#{status}</if>
+    </set>
+    <where>
+        id=#{id}
+    </where>
+</update>
+
+
+<select id="test10" resultType="B">
+select  * from orm_user
+where id in
+<foreach collection="list" item="item" index="index" open="(" separator="," close=")">
+id=#{id}
+</foreach>
+</select>
+
+</mapper>

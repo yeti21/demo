@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<input type="text" name="username" id="username" onblur="checkUsername()" placeholder="用户名" >
+<span id="msg"></span>
+<br>
+<input type="password" name="username" id="password" placeholder="密码">
+<script src="jquery-3.5.1.min.js">
+    /*
+    * 语法 $(selector).action()
+    * selector选择器（元素选择器${"p"}通过标签名来查找 HTML 元素,
+    * #id选择器 ${"#id"}通过 id 来查找 HTML 元素,
+    * .class选择器 ${".class"}通过类名来查找 HTML 元素）
+    * .action触发事件（鼠标事件[.click],键盘事件，表单事件，文档/窗口事件【.load】）
+    * */
+    function checkUsername() {
+         $.post({
+             url: "/login",
+             data: {}
+         })
+    }
+
+</script>
+</body>
+</html>

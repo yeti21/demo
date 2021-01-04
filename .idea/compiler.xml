@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="swagger" />
+        <module name="upload" />
+        <module name="springsecurity" />
+        <module name="redis" />
+        <module name="demo" />
+        <module name="pagehelper" />
+        <module name="mybatis-plus" />
+        <module name="email" />
+        <module name="shiro" />
+        <module name="bootstrap" />
+        <module name="war" />
+        <module name="jar" />
+        <module name="ehcache" />
+        <module name="mybatis" />
+        <module name="jquery" />
+        <module name="properties" />
+        <module name="thymeleaf" />
+        <module name="elasticsearch" />
+        <module name="mongodb" />
+        <module name="exception-handler" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="bootstrap" target="1.8" />
+      <module name="demo" target="1.8" />
+      <module name="demo1" target="1.8" />
+      <module name="ehcache" target="1.8" />
+      <module name="elasticsearch" target="1.8" />
+      <module name="email" target="1.8" />
+      <module name="exception-handler" target="1.8" />
+      <module name="jar" target="1.8" />
+      <module name="jquery" target="1.8" />
+      <module name="mongodb" target="1.8" />
+      <module name="mybatis" target="1.8" />
+      <module name="mybatis-plus" target="1.8" />
+      <module name="pagehelper" target="1.8" />
+      <module name="properties" target="1.8" />
+      <module name="redis" target="1.8" />
+      <module name="shiro" target="1.8" />
+      <module name="springsecurity" target="1.8" />
+      <module name="swagger" target="1.8" />
+      <module name="thymeleaf" target="1.8" />
+      <module name="upload" target="1.8" />
+      <module name="war" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="bootstrap" options="-parameters" />
+      <module name="demo" options="-parameters" />
+      <module name="demo1" options="-parameters" />
+      <module name="ehcache" options="-parameters" />
+      <module name="elasticsearch" options="-parameters" />
+      <module name="email" options="-parameters" />
+      <module name="exception-handler" options="-parameters" />
+      <module name="jar" options="-parameters" />
+      <module name="jquery" options="-parameters" />
+      <module name="mongodb" options="-parameters" />
+      <module name="mybatis" options="-parameters" />
+      <module name="mybatis-plus" options="-parameters" />
+      <module name="pagehelper" options="-parameters" />
+      <module name="properties" options="-parameters" />
+      <module name="redis" options="-parameters" />
+      <module name="shiro" options="-parameters" />
+      <module name="springsecurity" options="-parameters" />
+      <module name="swagger" options="-parameters" />
+      <module name="thymeleaf" options="-parameters" />
+      <module name="upload" options="-parameters" />
+      <module name="war" options="-parameters" />
+    </option>
+  </component>
+</project>

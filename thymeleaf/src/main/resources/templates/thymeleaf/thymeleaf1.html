@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--
+Thymeleaf的主要作用是把model中的数据渲染到html中，因此其语法主要是如何解析model中的数据
+-->
+
+<!--
+变量
+ Thymeleaf通过${}来获取model中的变量，注意这不是el表达式，而是ognl表达式，但是语法非常像。
+ 感觉跟el表达式差不多的。区别在于，我们的表达式写在b标签的属性中，这个叫做指令
+ -->
+<p th:text="${tu.name}"></p>
+<p th:text="${tu.age}"></p>
+<!--
+自定义变量
+-->
+<h1 th:object="${tu}">
+    <p th:text="*{name}"></p>
+    <p th:text="*{age}"></p>
+</h1>
+
+
+<!--方法-->
+<h1 th:object="${tu}">
+    <p th:text="*{name.split(' ')}"></p>
+</h1>
+
+
+
+
+
+
+
+
+
+<!--分支控制switch-->
+
+
+</body>
+</html>

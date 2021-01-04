@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--循环
+${userList}是要遍历的集合,可以是以下类型：
+Array:数组及其它一切符合数组结果的对象
+Map，遍历得到的是Map.Entry
+Interator，迭代器
+Enumeration，枚举
+Iterable，实现了Iterable接口的类
+-->
+<tr th:each="tu: ${userList}">
+    <td th:text="${tu.name}"></td>
+    <td th:text="${tu.age}"></td>
+    <br>
+</tr>
+<br>
+<!--在迭代的同时，我们也可以获取迭代的状态对象：-->
+<tr th:each=" tu,stat: ${userList}">
+    <td th:text="${tu.name}"></td>
+    <td th:text="${tu.age}"></td>
+    <br>
+</tr>
+
+
+
+</body>
+</html>

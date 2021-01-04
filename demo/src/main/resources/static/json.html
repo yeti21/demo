@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+   <!--JSON:JavaScript Object Notation JavaScript 对象表示法  它基于ECMAScript的一个子集
+   是 JavaScript 语法的子集
+   只支持字符串String，数字Number，布尔值Boolean 及null以及在此基础上的对象Object和数组Array 空格-->
+  <p>
+      Name:<span id="jname"></span><br>
+      Age:<span id="jage"></span><br>
+      Address:<span id="jstreet"></span><br>
+      Phone:<span id="jphone"></span>
+  </p>
+  <script>
+      var JSONObject={
+          "name":"John Johnson",
+          "street":"Oslo West 555",
+          "age":33,
+          "phone":"555 1234567"
+      };
+      document.getElementById("jname").innerHTML=JSONObject.name;
+      document.getElementById("jage").innerHTML=JSONObject.age
+      document.getElementById("jstreet").innerHTML=JSONObject.street
+      document.getElementById("jphone").innerHTML=JSONObject.phone
+
+      /*
+         数字
+       */
+        var obj={"mark":97};
+        /*
+        字符串
+         */
+      var obj={"name":'cl'};
+      /*
+      true/false
+      */
+      {"flag",true};
+      /*
+       null
+      */
+      {"a",null};
+       /*
+       数组
+        */
+      var obj={
+          "boos":[
+              {"language":"Java" , "edition":"second" },
+              {"language":"C++" , "lastName":"fifth"},
+              {"language":"C" , "lastName":"third"}
+          ],
+          "name":陈亮,
+      };
+      /*
+      对象    键名必须是字符串，并且不能同名
+       */
+      var obj={
+          "id": "011A",
+          "language": "JAVA",
+          "price": 500,
+      };
+
+  </script>
+
+
+</body>
+</html>

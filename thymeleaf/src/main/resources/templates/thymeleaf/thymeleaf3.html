@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--运算
+ ${}内部的是通过OGNL表达式引擎解析的，外部的才是通过Thymeleaf的引擎解析，因此运算符尽量放在${}外进行。
+ -->
+<!-- 支持的算术运算符：+ - * / %-->
+<p th:text="${tu.age}%2"></p>
+<!-- 支持的比较运算：>, <, >= ,<=
+但是>, <不能直接使用，因为xml会解析为标签，要使用别名
+可以使用的别名：gt (>), lt (<), ge (>=), le (<=), not (!). Also eq (==), neq/ne (!=).
+-->
+
+<!--条件运算符-->
+<p th:text="${tu.name}?'男':'女'"></p>
+<p th:text="${null}?:'二狗'"></p>
+
+
+
+
+
+</body>
+</html>

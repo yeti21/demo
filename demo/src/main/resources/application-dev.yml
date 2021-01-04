@@ -1,0 +1,108 @@
+#端口被占用解决办法 1.重新设置端口为8080 server.port=8080;
+#                 2.cmd
+#                 netstat -ano|findstr 8080  显示占用8080的进程PID 例如 3160
+#                 taskkill /pid 3160  /f
+server:
+  port: 8080
+  servlet:
+    #项目根目录
+    context-path: /demo
+
+
+spring:
+  #数据源配置
+  datasource:
+    username: root
+    password: 123456
+    #mysql以前的驱动   com.mysql.jdbc.Driver
+    #mysql 8.0的驱动
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/demo?useSSL=true&useUnicode=true&characterEncoding=utf8&serverTimezone=GMT
+    #使用Druid数据源
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      #初始连接数
+      initial-size: 10
+      #最大连接数
+      max-active: 100
+      #最小连接数
+      min-idle: 10
+      #获得连接等待超时的时间
+      max-wait: 60000
+      #打开PSCache，并且指定每个连接上PSCache的大小
+      pool-prepared-statements: true
+      max-pool-prepared-statement-per-connection-size: 20
+      #间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+      time-between-eviction-runs-millis: 60000
+      # 配置一个连接在池中最小生存的时间，单位是毫秒
+      min-evictable-idle-time-millis: 300000
+
+      validation-query: SELECT 1 FROM DUAL
+
+      testWhileIdle: true
+
+      testOnBorrow: false
+
+      testOnReturn: false
+
+      stat-view-servlet:
+        enabled: true
+        url-pattern: /druid/*
+
+      filter:
+        stat:
+          log-slow-sql: true
+          slow-sql-millis: 1000
+          merge-sql: false
+        wall:
+          config:
+            multi-statement-allow: true
+
+  thymeleaf:
+    #检查模版位置是否存在，默认为 true
+    check-template-location:  true
+    #关闭缓存,及时刷新,上线生产环境改为true
+    cache: false
+    encoding:   UTF-8
+    prefix:  classpath:/templates/
+    servlet:
+      content-type: text/html
+    mode:  LEGACYHTML5  #取消HTML5严格检查
+    suffix: .html
+  jackson: #springboot 针对jackson自动化配置
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  redis:
+    database: 0
+    host: localhost
+    port: 6379
+    timeout: 10000ms
+    lettuce:
+      pool:
+        max-active: 8
+
+        max-wait: -1ms
+
+        max-idle: 8
+
+        min-idle: 0
+
+
+logging: #日志
+  config:classpath: logback-spring.xml
+
+
+
+
+
+
+
+#springboot的热部署碰到访问接口报404
+#DevTools的检测时间和idea的编译所需时间存在差异。在idea还没完成编译工作前，
+# DevTools就开始进行重启和加载，导致@RequestMapping没有被全部正常处理
+#牺牲一点时间，去加长devtools的轮询时间，增大等待时间
+
+
+
+
+

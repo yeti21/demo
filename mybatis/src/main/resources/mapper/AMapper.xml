@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.demo.dao.AMapper">
+    <!--一对一查询-->
+    <select id="selectTeacherAndPositionByName" resultMap="teacherMap">
+select t.id as td ,t.t_no as ttn,t.t_name as tn,
+p.id as pd,p.t_pos_name as ptpn from tb_teacher t
+left join tb_position p on t.position_id=p.id
+where t.t_name=#{name};
+</select>
+    <select id="selectTeacherAndPosition" resultMap="teacherMap">
+        select t.id as td ,t.t_no as ttn ,t.t_name as tn,
+        p.id as pd , p.t_pos_name as ptpn
+        from tb_teacher t left join tb_position p on
+        t.position_id=p.id
+    </select>
+    <resultMap id="teacherMap" type="com.example.demo.entity.Teacher">
+        <id property="id" column="td"></id>
+        <result property="no" column="ttn"></result>
+        <result property="name" column="tn"></result>
+        <association property="position" javaType="com.example.demo.entity.Position">
+            <id property="id" column="pd"></id>
+            <result property="name" column="ptpn"></result>
+        </association>
+    </resultMap>
+
+    <!--一对多-->
+    <resultMap id="positionMap" type="com.example.demo.entity.Position">
+        <id property="id" column="pd"></id>
+        <result property="name" column="ptpn"></result>
+        <collection property="teacherlist" javaType="list" ofType="com.example.demo.entity.Teacher">
+            <id property="id" column="td"></id>
+            <result property="no" column="tt"></result>
+            <result property="name" column="tn"></result>
+        </collection>
+    </resultMap>
+    <select id="selectPositionTeacherByName" resultMap="positionMap">
+        select p.id as pd,p.t_pos_name as  ptpn,
+        t.id as td ,t.t_no as tt ,t.t_name as tn
+        from tb_position p left join tb_teacher t on p.id=t.position_id
+        where p.t_pos_name=#{name};
+    </select>
+    <select id="selectPositionTeacher" resultMap="positionMap">
+       select p.id as pd ,p.t_pos_name as ptpn,
+       t.id as td, t.t_no as tt, t.t_name as tn
+       from tb_position p left join tb_teacher t on p.id=t.position_id
+    </select>
+
+
+    <!--多对多-->
+    <resultMap id="a" type="com.example.demo.entity.Position">
+        <result property="name" column="ptpn"></result>
+        <collection property="teacherlist" javaType="List" ofType="com.example.demo.entity.Teacher">
+            <result property="no" column="ttno"></result>
+            <result property="name" column="ttn"></result>
+            <collection property="studentList" javaType="List" ofType="com.example.demo.entity.Student">
+                <result property="name" column="stsn"></result>
+            </collection>
+        </collection>
+    </resultMap>
+    <select id="selectStudents" resultMap="a">
+        select p.t_pos_name as ptpn, t.t_no as ttno,t.t_name as ttn, s.t_stu_name as stsn
+        from tb_position p
+        left join tb_teacher t on p.id=t.position_id
+        left join tb_stu_teach st on t.id=st.t_teach_id
+        left join tb_student s on st.t_stu_id=s.id
+        where p.t_pos_name=#{name}
+    </select>
+
+
+</mapper>

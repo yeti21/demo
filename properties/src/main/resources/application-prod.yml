@@ -1,0 +1,13 @@
+application:
+  name: prod环境 项目名称（在pom.xml中） @artifactId@
+  version: prod环境 项目版本（在pom.xml中） @version@
+
+developer:
+  name: prod环境 陈亮
+  website: prod环境  localhost:8080/
+  phone-number: prod环境 18451089892
+  qq: prod环境 1186939108
+
+
+
+

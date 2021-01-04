@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--一些环境相关对象
+Thymeleaf中提供了一些内置对象,需要使用#对象名来引用
+#ctx      获取Thymeleaf自己的Context对象
+#requset    如果是web程序，可以获取HttpServletRequest对象
+#response        如果是web程序，可以获取HttpServletReponse对象
+#session            如果是web程序，可以获取HttpSession对象
+#servletContext          如果是web程序，可以获取HttpServletContext对象
+全局对象
+#dates          处理java.util.date的工具对象
+#calendars        处理java.util.calendar的工具对象
+#numbers               用来对数字格式化的方法
+#strings                  用来处理字符串的方法
+#bools                 用来判断布尔值的方法
+#arrays               用来护理数组的方法
+#lists              用来处理List集合的方法
+#sets                    用来处理set集合的方法
+#maps                 用来处理map集合的方法
+-->
+
+<p th:text="${#dates.format(today,'yyyy-MM-dd')}"></p>
+
+<!--字符串字面值-->
+<p th:text="'thymeleaf'">1</p>
+<!--数字字面值-->
+<p th:text="2018">2</p>
+<p th:text="2018+2">3</p>
+<!--布尔字面值-->
+<p th:if="true">4</p>
+<p th:if="false">5</p>
+<!--拼接-->
+<p th:text="'欢迎你'+${tu.name} +'!'"></p>
+<!--简化拼接-->
+<p th:text="|欢迎你${tu.name}|"></p>
+
+</body>
+</html>
